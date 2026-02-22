@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مسابقه صيدليه الطيب</title>
+    <title>مسابقة رمضان</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- التصميم والألوان الأصيلة --- */
-:root { 
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-    /* تم تقليل الرقم هنا لزيادة الشفافية */
-    --glass-bg: rgba(255, 255, 255, 0.75); 
-    --text-color: #333; 
-    --primary-color: #667eea; 
-    --success-color: #00b09b; 
-    --shadow-lg: 0 15px 35px rgba(0,0,0,0.3);
+        :root { 
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            --glass-bg: rgba(255, 255, 255, 0.75); 
+            --text-color: #333; 
+            --primary-color: #d91f26; 
+            --success-color: #d91f26; 
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; outline: none; }
         
         body { 
             font-family: 'Cairo', sans-serif; 
-            /* إضافة صورة الخلفية مع طبقة تعتيم */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                              url('https://i.ibb.co/ynXZwgGD/ramdan-kareem-facebook-post-ver-1.png'); 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+                              url('https://i.ibb.co/v6nztrJx/Whats-App-Image-2026-02-15-at-1-48-52-PM.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             min-height: 100vh; 
             color: var(--text-color); 
-            display: flex; 
+            display: flex;
             justify-content: center; 
             align-items: center; 
             padding: 20px; 
@@ -38,11 +34,10 @@
         .app-container { width: 100%; max-width: 500px; position: relative; }
         
         .card { 
-            background: var(--glass-bg); 
-            backdrop-filter: blur(12px); 
+            background: #ffffff;
             border-radius: 25px; 
             padding: 30px; 
-            box-shadow: var(--shadow-lg); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
             text-align: center; 
             margin-bottom: 20px; 
             animation: slideUp 0.5s ease-out; 
@@ -55,23 +50,22 @@
         h2 { font-size: 1.4rem; margin-bottom: 15px; color: #444; }
         p { color: #555; margin-bottom: 20px; font-size: 0.95rem; line-height: 1.6; }
 
-        .logo-img { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .logo-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 4px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 
-        /* --- الأزرار والحقول --- */
         .btn { 
             display: block; width: 100%; padding: 14px; border: none; border-radius: 12px; 
             font-family: 'Cairo', sans-serif; font-size: 1rem; font-weight: 700; 
-            cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, background 0.3s; 
+            cursor: pointer; transition: transform 0.2s, background 0.3s; 
             margin-bottom: 10px; text-decoration: none; 
         }
         .btn:active { transform: scale(0.98); }
-        .btn-primary { background: var(--primary-gradient); color: white; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4); }
-        .btn-success { background: var(--success-color); color: white; box-shadow: 0 4px 15px rgba(0, 176, 155, 0.3); }
+        .btn-primary { background: var(--primary-gradient); color: white; }
+        .btn-success { background: var(--success-color); color: white; }
         .btn-outline { background: transparent; border: 2px solid var(--primary-color); color: var(--primary-color); }
 
-        input, select { 
+        input { 
             width: 100%; padding: 12px 15px; border: 2px solid #e0e0e0; border-radius: 12px; 
-            font-size: 1rem; font-family: 'Cairo', sans-serif; margin-bottom: 15px; background: white;
+            font-size: 1rem; font-family: 'Cairo', sans-serif; margin-bottom: 15px;
         }
 
         .selection-grid { display: grid; gap: 15px; margin-top: 10px; }
@@ -79,20 +73,17 @@
             background: #fff; padding: 15px; border-radius: 15px; border: 2px solid #eee; 
             cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: space-between; 
         }
-        .select-card:hover { border-color: var(--primary-color); background: #f9faff; transform: translateY(-2px); }
-        .select-card h3 { font-size: 1.1rem; margin-bottom: 2px; color: var(--primary-color); }
-        .select-card span { font-size: 0.8rem; color: #777; }
-        .select-icon { font-size: 1.5rem; }
+        .select-card:hover { border-color: var(--primary-color); background: #f9faff; }
 
         .progress-container { background: #e0e0e0; border-radius: 10px; height: 8px; margin-bottom: 25px; overflow: hidden; }
         .progress-bar { height: 100%; background: var(--primary-gradient); width: 0%; transition: width 0.4s ease; }
-        .question-text { font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; line-height: 1.5; color: #222; }
+
         .option-btn { 
             background: #fff; border: 2px solid #eee; padding: 13px; border-radius: 12px; 
             font-family: 'Cairo', sans-serif; font-size: 1rem; cursor: pointer; 
-            transition: all 0.2s; text-align: right; margin-bottom: 12px; width: 100%; color: #444;
+            margin-bottom: 12px; width: 100%; text-align: right;
         }
-        .option-btn:hover { border-color: var(--primary-color); background: #f9faff; color: var(--primary-color); }
+        .option-btn:hover { border-color: var(--primary-color); background: #f9faff; }
 
         #loading-overlay { 
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
@@ -109,15 +100,14 @@
 
     <div id="loading-overlay" class="hidden">
         <div class="spinner"></div>
-        <p style="margin-top: 15px; color: #666;" id="loading-text">جاري معالجة البيانات...</p>
+        <p style="margin-top: 15px; color: #666;" id="loading-text">جاري المعالجة...</p>
     </div>
 
     <div class="app-container">
-        
         <section id="start-screen" class="card">
-            <img src="https://picsum.photos/seed/pharmacy/150/150.jpg" alt="Logo" class="logo-img">
-            <h1>مسابقه صيدليه الطيب</h1>
-            <p>المسابقه الرمضانيه<br>اختبر معلوماتك واربح جوائز قيمة</p>
+            <img src="https://i.ibb.co/2QDqWXK/Semary-Logo-4.png" alt="Logo" class="logo-img">
+            <h1>مسابقة رمضان</h1>
+            <p>اختبر معلوماتك واربح جوائز قيمة</p>
             <button class="btn btn-primary" onclick="loadQuizData()">ابدأ المسابقة الآن</button>
         </section>
 
@@ -125,28 +115,28 @@
             <div class="progress-container">
                 <div id="progress-fill" class="progress-bar"></div>
             </div>
-            <h2 id="question-number" style="font-size: 0.9rem; color: var(--primary-color); margin-bottom: 5px;">السؤال</h2>
-            <p id="question-text" class="question-text">جاري تحميل السؤال...</p>
+            <h2 id="question-number" style="font-size: 0.9rem; color: var(--primary-color);">السؤال</h2>
+            <p id="question-text" style="font-weight: bold; font-size: 1.2rem; margin-bottom: 20px;">جاري تحميل السؤال...</p>
             <div id="options-container"></div>
         </section>
 
         <section id="client-selection" class="card hidden">
-            <h2 style="color: var(--success-color);">السوال الاخير </h2>
-            <p>قم باختيار طريقة التسجيل لحفظ النتيجة:</p>
+            <h2 style="color: var(--success-color);">خطوة أخيرة</h2>
+            <p>اختر طريقة التسجيل لحفظ النتيجة:</p>
             <div class="selection-grid">
                 <div class="select-card" onclick="showRegistration('new')">
                     <div style="text-align: right;">
                         <h3>عميل جديد</h3>
-                        <span>تسجيل بياناتك لأول مرة</span>
+                        <span>تسجيل لأول مرة</span>
                     </div>
-                    <div class="select-icon">👤</div>
+                    <span>👤</span>
                 </div>
                 <div class="select-card" onclick="showRegistration('existing')">
                     <div style="text-align: right;">
                         <h3>لدي كود</h3>
-                        <span>ادخل الكود الخاص بك او رقم الهاتف</span>
+                        <span>أدخل كود المسابقة</span>
                     </div>
-                    <div class="select-icon">🔑</div>
+                    <span>🔑</span>
                 </div>
             </div>
         </section>
@@ -156,26 +146,28 @@
             <div id="new-client-fields">
                 <input type="text" id="user-name" placeholder="الاسم الكامل">
                 <input type="number" id="user-phone" placeholder="رقم الواتساب">
-                <input type="text" id="user-address" placeholder="العنوان">
+                <input type="text" id="user-area" placeholder="كمبوند">
+                <input type="text" id="user-build" placeholder="عمارة">
+                <input type="text" id="user-floor" placeholder="الدور">
+                <input type="text" id="user-apartment" placeholder="شقة">
             </div>
             <div id="existing-client-fields" class="hidden">
-                <input type="text" id="user-code" placeholder="أدخل الكود الخاص بك أو رقم الهاتف">
+                <input type="text" id="user-code" placeholder="أدخل الكود الخاص بك">
             </div>
             <button class="btn btn-success" onclick="submitToSheet()">إرسال وتأكيد النتيجة</button>
             <button class="btn btn-outline" onclick="showSection('client-selection')">رجوع</button>
         </section>
 
         <section id="success-screen" class="card hidden">
-            <div style="font-size: 4rem; margin-bottom: 10px;">🎉</div>
+            <div style="font-size: 4rem;">🎉</div>
             <h2 style="color: var(--success-color);">تم بنجاح!</h2>
-            <p id="success-msg" style="font-size: 1.1rem; font-weight: 600; color: #333;">تم حفظ إجاباتك وبياناتك في الشيت بنجاح.</p>
+            <p id="success-msg">تم حفظ بياناتك بنجاح.</p>
             <button class="btn btn-primary" onclick="location.reload()">العودة للرئيسية</button>
         </section>
-
     </div>
 
     <script>
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzikVXJgSar_Ov2ktIkFz3t3Oy_gwGGxoe0ONpA26vvOeAg3R5FtJllS6D-pKPkVZ2R/exec";
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyRWxu7Wm6ZezeTyMd23iLl8JGY2UGQFgAiVfBhG3EUkvUSCCB6q4WuzMWH6xrUgYqKOw/exec";
         
         let questions = [];
         let currentIdx = 0;
@@ -183,20 +175,17 @@
         let currentClientType = 'new';
 
         async function loadQuizData() {
-            setLoading(true, "جاري تحميل الأسئلة ...");
+            setLoading(true, "جاري تحميل الأسئلة...");
             try {
                 const response = await fetch(`${SCRIPT_URL}?action=get_questions`);
                 const data = await response.json();
                 questions = data.questions;
-                
                 if (questions && questions.length > 0) {
                     showSection('quiz-section');
                     renderQuestion();
-                } else {
-                    alert("لم يتم العثور على أسئلة. تأكد من ورقة Questions في الشيت.");
                 }
             } catch (error) {
-                alert("خطأ في الاتصال. تأكد من نشر السكربت كـ Web App للجميع.");
+                alert("حدث خطأ في تحميل الأسئلة.");
             }
             setLoading(false);
         }
@@ -207,7 +196,6 @@
             document.getElementById('question-text').innerText = q.question;
             const container = document.getElementById('options-container');
             container.innerHTML = '';
-            
             q.options.forEach((opt, i) => {
                 const btn = document.createElement('button');
                 btn.className = 'option-btn';
@@ -215,9 +203,7 @@
                 btn.onclick = () => handleSelect(i + 1);
                 container.appendChild(btn);
             });
-
-            const progress = (currentIdx / questions.length) * 100;
-            document.getElementById('progress-fill').style.width = `${progress}%`;
+            document.getElementById('progress-fill').style.width = `${(currentIdx / questions.length) * 100}%`;
         }
 
         function handleSelect(val) {
@@ -226,7 +212,6 @@
             if (currentIdx < questions.length) {
                 renderQuestion();
             } else {
-                document.getElementById('progress-fill').style.width = `100%`;
                 showSection('client-selection');
             }
         }
@@ -234,58 +219,37 @@
         function showRegistration(type) {
             currentClientType = type;
             showSection('registration-form');
-            document.getElementById('form-title').innerText = (type === 'new') ? "تسجيل عميل جديد" : "تأكيد البيانات";
+            document.getElementById('form-title').innerText = type === 'new' ? "تسجيل عميل جديد" : "تأكيد الكود";
             document.getElementById('new-client-fields').classList.toggle('hidden', type !== 'new');
             document.getElementById('existing-client-fields').classList.toggle('hidden', type !== 'existing');
         }
 
         async function submitToSheet() {
-            // التحقق من الحقول المطلوبة
-            if (currentClientType === 'new') {
-                if(!document.getElementById('user-name').value || !document.getElementById('user-phone').value) {
-                    alert("من فضلك أكمل الاسم ورقم الهاتف");
-                    return;
-                }
-            } else {
-                if(!document.getElementById('user-code').value) {
-                    alert("من فضلك أدخل الكود الخاص بك");
-                    return;
-                }
-            }
-
-            setLoading(true, "جاري حفظ إجاباتك...");
+            setLoading(true, "جاري الحفظ...");
             const params = new URLSearchParams();
             params.append('action', 'save_response');
             params.append('clientType', currentClientType);
             params.append('answers', answers.join(','));
-            
+
             if (currentClientType === 'new') {
                 params.append('name', document.getElementById('user-name').value);
                 params.append('phone', document.getElementById('user-phone').value);
-                params.append('address', document.getElementById('user-address').value);
+                params.append('compound', document.getElementById('user-area').value);
+                params.append('building', document.getElementById('user-build').value);
+                params.append('floor', document.getElementById('user-floor').value);
+                params.append('apartment', document.getElementById('user-apartment').value);
             } else {
                 params.append('code', document.getElementById('user-code').value);
             }
 
             try {
-                await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    body: params
-                });
-                
+                await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: params });
                 setTimeout(() => {
                     setLoading(false);
-                    const msgElement = document.getElementById('success-msg');
-                    if (currentClientType === 'new') {
-                        msgElement.innerText = "تم إرسال إجابتك بنجاح، وسيتم إرسال الكود الخاص بك على واتساب قريباً.";
-                    } else {
-                        msgElement.innerText = "تم تسجيل إجابتك بنجاح. شكراً لمشاركتك!";
-                    }
                     showSection('success-screen');
                 }, 1500);
             } catch (e) {
-                alert("حدث خطأ أثناء الإرسال.");
+                alert("خطأ في الإرسال.");
                 setLoading(false);
             }
         }
@@ -296,9 +260,8 @@
         }
 
         function setLoading(show, text = "") {
-            const overlay = document.getElementById('loading-overlay');
             document.getElementById('loading-text').innerText = text;
-            overlay.classList.toggle('hidden', !show);
+            document.getElementById('loading-overlay').classList.toggle('hidden', !show);
         }
     </script>
 </body>
