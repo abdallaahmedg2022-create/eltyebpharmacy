@@ -167,7 +167,7 @@
     </div>
 
     <script>
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxPmCvwo3vxZpstNFqlGVvVDdhZ4FNxvuFtDcSNwZpAxFVV0vM7t8iLFkt6jKaXjLm-Kw/exec";
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyfftTihOhvhdMgzUp2jnmExxJ5vTHksEclYg21ybjpXliEZ9DW9RUHV7pDUNxvIXcEtw/exec";
         
         let questions = [];
         let currentIdx = 0;
@@ -231,15 +231,14 @@
             params.append('clientType', currentClientType);
             params.append('answers', answers.join(','));
 
-            // داخل دالة submitToSheet في ملف الـ HTML
-if (currentClientType === 'new') {
-    params.append('name', document.getElementById('user-name').value);
-    params.append('phone', document.getElementById('user-phone').value);
-    params.append('area', document.getElementById('user-area').value);  // تأكد إنها area مش compound
-    params.append('build', document.getElementById('user-build').value); // تأكد إنها build مش building
-    params.append('floor', document.getElementById('user-floor').value);
-    params.append('apartment', document.getElementById('user-apartment').value);
-} else {
+            if (currentClientType === 'new') {
+                params.append('name', document.getElementById('user-name').value);
+                params.append('phone', document.getElementById('user-phone').value);
+                params.append('compound', document.getElementById('user-area').value);
+                params.append('building', document.getElementById('user-build').value);
+                params.append('floor', document.getElementById('user-floor').value);
+                params.append('apartment', document.getElementById('user-apartment').value);
+            } else {
                 params.append('code', document.getElementById('user-code').value);
             }
 
